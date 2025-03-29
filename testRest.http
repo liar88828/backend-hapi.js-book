@@ -1,0 +1,56 @@
+@url=http://localhost:9000/books
+
+### GET DATA
+GET {{url}}
+Content-Type:
+
+###
+POST{{url}}
+Content-Type: application/json
+
+{
+  "name": "Dicoding",
+  "year": 2010,
+  "author": "John Doe",
+  "summary": "Lorem ipsum dolor sit amet",
+  "publisher": "Dicoding Indonesia",
+  "pageCount": {{$random.integer()}},
+  "readPage": {{$random.integer()}},
+  "reading": false
+}
+
+### GET DATA By ID
+GET {{url}}/JOA_cg675RFHQK0ANUDMW
+
+### PUT DATA By ID
+PUT {{url}}/JOA_cg675RFHQK0ANUDMW
+Content-Type: application/json
+
+{
+  "name": "Buku A update xxx",
+  "year": 2010,
+  "author": "John Doe",
+  "summary": "Lorem ipsum dolor sit amet",
+  "publisher": "Dicoding Indonesia",
+  "pageCount": 9109,
+  "readPage": 999,
+  "reading": true
+}
+
+### DELETE DATA By ID
+DELETE {{url}}/l7Feo3Iab5A18u6oIAnwC
+
+### GET DATA query readed
+GET {{url}}?reading=1
+
+### GET DATA query unread
+GET {{url}}?reading=0
+
+### GET DATA query finised
+GET {{url}}?finished=1
+
+### GET DATA query unfinish
+GET {{url}}?finished=0
+
+### GET DATA query name
+GET {{url}}?name=Dicoding

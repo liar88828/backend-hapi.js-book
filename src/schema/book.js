@@ -125,5 +125,12 @@ const updateBookSchema = Joi.object({
     })
 });
 
+const queryBookSchema = Joi.object( {
+    name: Joi.string().optional(),
+    reading: Joi.number().optional(),
+    finished: Joi.number().optional(),
+} );
 
-module.exports = { createBookSchema ,updateBookSchema};
+const idBookSchema = Joi.object( { bookId: Joi.string() } );
+
+module.exports = { createBookSchema ,updateBookSchema,queryBookSchema,idBookSchema};
